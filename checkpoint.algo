@@ -1,0 +1,22 @@
+FUNCTION insertionSort(arr):
+VAR
+    n = length(arr)
+BEGIN
+    FOR i = 1 TO n:
+            key = arr[i] // Pick the current element to insert into the sorted sequence.
+            j = i - 1 // Set the second counter to iterate through the sorted portion.
+    END_FOR
+
+        // Compare the key with the elements in the sorted portion (arr[j]) from right to left.
+        // Move larger elements to the right (arr[j+1] = arr[j]) to make space for the key.
+    WHILE j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j = j - 1
+
+        // Once a smaller element is found or the beginning of the sorted portion is reached,
+        // insert the key into arr[j+1].
+            arr[j + 1] = key
+    END_WHILE
+
+        return arr
+END
